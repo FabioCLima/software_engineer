@@ -1,0 +1,158 @@
+Geometry game program.
+The game is about users guessing points inside a rectangle.
+Rectangles have a coordinates for their lower-left and upper-right corners
+and points also have coordinates.
+
+The program displays a message to the user showing the coordinates of a rectangle. 
+The user should enter the coordinates of a point.
+
+message -> string 
+coordinates -> float
+rectangle -> new class
+point -> new class
+
+
+---
+
+**Overview**:
+The module consists of two main classes: `Point` and `Rectangle`. The `Point`
+class represents a point in a 2D space, while the `Rectangle` class 
+represents a rectangle defined by two points: the lower-left corner and the
+upper-right corner.
+
+---
+
+**1. Point Class**:
+
+- **Attributes**:
+  - `x`: Represents the x-coordinate of the point.
+  - `y`: Represents the y-coordinate of the point.
+  
+- **Methods**:
+  1. `__init__`: This is the constructor method. When you create a new `Point`
+    object, this method is automatically called. It initializes the `x` and `y`
+    coordinates.
+     
+     **Usage**:
+     ```python
+     p = Point(1, 2)
+     ```
+
+  2. `__str__`: This method returns a string representation of the object,
+  making it easier to print and understand the object's state.
+     
+     **Usage**:
+     ```python
+     print(p)  # Outputs: Point(1, 2)
+     ```
+
+  3. `__eq__`: This method checks if the current `Point` object is equal to
+  another `Point` object. It compares the x and y coordinates of both points.
+
+  4. `falls_inside_rectangle`: This method checks if the current point is
+  inside a given rectangle. It returns `True` if the point is inside and `False` otherwise.
+  
+  5. `distance`: This method calculates the distance between the current
+  point and another given point using the Pythagorean theorem.
+
+---
+
+**2. Rectangle Class**:
+
+- **Attributes**:
+  - `lowleft`: Represents the lower left corner of the rectangle.
+  - `upright`: Represents the upper right corner of the rectangle.
+
+- **Methods**:
+  1. `__init__`: This is the constructor method for the `Rectangle` class.
+  It initializes the lower left and upper right corners using two `Point` objects.
+     
+     **Usage**:
+     ```python
+     r = Rectangle(Point(0, 0), Point(2, 3))
+     ```
+
+  2. `__str__`: This method returns a string representation of the `Rectangle`
+  object.
+  
+  3. `area`: This method calculates the area of the rectangle using the
+  formula: \(\text{width} \times \text{height}\).
+
+---
+
+**Best Practices**:
+1. **Encapsulation**: As you can see, each class encapsulates the data
+ (attributes) and the methods that operate on the data. This is a core
+  principle of OOP known as encapsulation. It helps in organizing code
+   and ensures that each object maintains a specific behavior.
+
+2. **Docstrings**: Each class and method has a documentation string (docstring)
+ that describes its purpose. This is essential for understanding the functionality
+  and for generating documentation. Additionally, the provided docstrings include
+   interactive examples that can be tested with `Doctest`.
+
+3. **Type Annotations**: The code uses type annotations to indicate the expected
+ data types of function arguments and return values. This improves code
+  readability and can help catch potential type-related errors.
+
+4. **Error Handling**: In the `main` function, you can see a `try...except`
+ block. This is used to catch and handle potential errors, like if the user
+  provides invalid input.
+
+---
+
+**Tips for Juniors**:
+1. **Start Simple**: Before diving into complex OOP designs, start with simple
+ classes and gradually add more features and methods.
+2. **Practice**: The best way to understand OOP is to practice. Try creating
+ classes for other geometric shapes and implement methods to calculate perimeter,
+  area, etc.
+3. **Ask Questions**: If something is unclear or confusing, don't hesitate to ask.
+ OOP is a vast topic, and everyone, at some point, needed help understanding certain concepts.
+
+---
+
+This module provides a foundational understanding of creating classes and methods in Python.
+ As you advance, you'll encounter more advanced OOP concepts like inheritance, polymorphism,
+  and abstract classes. Remember, the journey of mastering OOP is a marathon, not a sprint.
+   Keep practicing and happy coding!
+
+In the provided geometry problem, the design pattern used is indeed **Composition**.
+
+**Why is it Composition?**
+
+1. **Definition**: Composition is a design principle in OOP where a class is composed
+of one or more classes rather than inheriting from them. In essence, instead of a class
+being something, it has something. This is often summed up with the phrase "has-a" rather
+than "is-a" (which is more associated with inheritance).
+
+2. **Usage in the Geometry Problem**: The `Rectangle` class doesn't inherit from the
+`Point` class. Instead, it "has" two `Point` objects (attributes `lowleft` and `upright`).
+ This is a clear case of Composition: the `Rectangle` class is composed of two `Point` objects.
+
+```python
+class Rectangle:
+    def __init__(self, lowleft: Point, upright: Point) -> None:
+        self.lowleft = lowleft
+        self.upright = upright
+```
+
+The `Rectangle` class has two instances of the `Point` class but doesn't inherit any
+of its characteristics or behaviors. Instead, it utilizes the behavior and properties of
+the `Point` instances.
+
+**Benefits of Composition**:
+
+1. **Flexibility**: Composition allows for more flexibility in development. You can easily
+ change the behavior of your classes without needing to refactor a lot of code.
+2. **Avoids the Diamond Problem**: In languages that support multiple inheritance
+ (though Python has ways to manage this), using composition can avoid the "diamond problem"
+  where a class might inherit from two classes that have a common ancestor, leading to
+   ambiguity.
+3. **Encapsulation**: Composition can be used to hide the internal details of how something
+ is implemented. Clients use the composed class without needing to know about the individual
+  components.
+
+In conclusion, the geometric problem uses Composition to build a relationship between the
+ `Rectangle` and `Point` classes, showcasing a "has-a" relationship. This choice provides
+  clarity and maintainability to the code structure.

@@ -1,0 +1,52 @@
+Attributes = encode the state of an object and are represented by variables.
+
+methods = encode behavior of an object and are respresented by functions.
+
+encapsulation = is a software design pratice of building the data and the 
+methods that operate on that data.
+
+Classes and objects both have attributes and methods, but the difference is
+that a class is abstract template, while an object is a concrete representation
+of a class.
+
+dir(object)
+help(object)
+
+# Classes
+attributes - storing the state
+methods - storing the behavior
+
+*****************************************************************
+set attributes on the fly is called setter method.
+example:
+class Employee:
+    pass
+
+    def set_name(self, new_name: str) -> None:
+        self.name = new_name
+
+    def set_salary(self, new_salary: float) -> None:
+        self.salary = new_salary
+
+
+if __name__ == "__main__":
+    emp = Employee()
+
+# Use set_name() on emp to set the name of emp to 'Fabio Lima'
+emp.set_name('Fabio Lima')
+
+# Print the name of emp
+print(emp.name)
+
+# set the salary of emp to 50000
+emp.set_salary(50000)
+print(emp.salary)
+print(dir(emp))
+*****************************************************************
+Initializing attributes in the constructor is a good idea, because this ensures
+that the object has all the necessary attributes the moment it is created.
+
+The __init__() method is a great place to do preprocessing
+
+In Python, it's recommended not to compare boolean values using == with True
+or False. Instead, the value itself (for True) or the negation (for False) should be used.
