@@ -10,7 +10,6 @@ import hashlib
 
 
 class Account:
-
     def __init__(self, name: str, balance: int, password: str) -> None:
         """
         Initializes the Account with the client's name, balance and password.
@@ -104,7 +103,7 @@ class Account:
         Displays the account details.
         Note: For security reasons, the password is not shown.
         """
-        print('       Name:', self._name)
-        print('       Balance:', self._balance)
-        print('       Password: *****')
+        print("       Name:", self._name)
+        print("       Balance:", self._balance)
+        print("       Password: *****")
         print()

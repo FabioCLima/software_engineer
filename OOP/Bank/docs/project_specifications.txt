@@ -2,7 +2,7 @@ Program that simulates running a bank.
 
 ps: Not ready for production, invalid user entries, or misuse --> ERROR
 
-Objective: Learn how the code interacts with the data associated with one or 
+Objective: Learn how the code interacts with the data associated with one or
 more bank accounts.
 
 What operations a client would want to do with a bank account - methods,

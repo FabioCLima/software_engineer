@@ -1,30 +1,55 @@
-from src.account_class import Account
+# Main program for controlling a Bank made up of Accounts
+
+# Bring in all the code of the Bank class
+from src.bank_class import Bank
 
 
 def main():
-    # Create an account for Alice with an initial balance of $1000
-    alice_account = Account('Alice', 1000, 'password1234')
+    """Main function to interact with the bank operations."""
+    # Create an instance of the Bank
+    bank_instance = Bank()
 
-    # Check Alice's initial balance
-    current_balance = alice_account.balance
-    print(f"Alice's current balance: ${current_balance}")
+    # Create two test accounts
+    joes_account_number = bank_instance.create_account("Joe", 100, "JoesPassword")
+    print(f"Joe's account number is: {joes_account_number}")
 
-    # Alice deposits $500
-    new_balance = alice_account.deposit(500, 'password1234')
-    print(f"Alice's new balance after depositing $500: ${new_balance}")
+    marys_account_number = bank_instance.create_account("Mary", 12345, "MarysPassword")
 
-    # Alice tries to withdraw $300
-    new_balance = alice_account.withdraw(300, 'password1234')
-    print(f"Alice's new balance after withdrawing $300: ${new_balance}")
+    print(f"Mary's account number is: {marys_account_number}")
 
-    # Display Alice's account details
-    alice_account.show()
+    while True:
+        print("\nOptions:")
+        print("b - Get an account balance")
+        print("c - Close an account")
+        print("d - Make a deposit")
+        print("i - Get bank information")
+        print("o - Open a new account")
+        print("s - Show all accounts")
+        print("w - Make a withdrawal")
+        print("q - Quit")
 
-    # Handle exceptions when trying to withdraw more than the current balance
-    try:
-        alice_account.withdraw(5000, 'password1234')
-    except ValueError as e:
-        print(f"Error: {e}")
+        action = input("What do you want to do? ").lower().strip()
+
+        if action == "b":
+            bank_instance.balance()
+        elif action == "c":
+            bank_instance.close_account()
+        elif action == "d":
+            bank_instance.deposit()
+        elif action == "i":
+            bank_instance.bank_info()
+        elif action == "o":
+            bank_instance.open_account()
+        elif action == "s":
+            bank_instance.show()
+        elif action == "w":
+            bank_instance.withdraw()
+        elif action == "q":
+            break
+        else:
+            print("Sorry, that was not a valid action. Please try again.")
+
+    print("Done")
 
 
 if __name__ == "__main__":
