@@ -2,7 +2,7 @@ Attributes = encode the state of an object and are represented by variables.
 
 methods = encode behavior of an object and are respresented by functions.
 
-encapsulation = is a software design pratice of building the data and the 
+encapsulation = is a software design pratice of building the data and the
 methods that operate on that data.
 
 Classes and objects both have attributes and methods, but the difference is

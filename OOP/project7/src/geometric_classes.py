@@ -3,7 +3,9 @@
 # ! directly in type hints within the class itself.
 # ***********************************************************************
 
+
 from __future__ import annotations
+from typing import Any
 from math import sqrt
 
 
@@ -41,7 +43,7 @@ class Point:
         """
         return f"Point({self.x}, {self.y})"
 
-    def __eq__(self, p: Point) -> bool:
+    def __eq__(self, other: Any) -> bool:
         """
         Determines if the current Point object is equal to another object.
 
@@ -53,7 +55,9 @@ class Point:
         >>> p1 == p3
         False
         """
-        return isinstance(p, Point) and self.x == p.x and self.y == p.y
+        if not isinstance(other, Point):
+            return NotImplemented
+        return self.x == other.x and self.y == other.y
 
     def falls_inside_rectangle(self, rectangle: Rectangle) -> bool:
         """
@@ -131,5 +135,4 @@ class Rectangle:
         >>> r.area()
         6.0
         """
-        return ((self.upright.x - self.lowleft.x) *
-                (self.upright.y - self.lowleft.y))
+        return (self.upright.x - self.lowleft.x) * (self.upright.y - self.lowleft.y)

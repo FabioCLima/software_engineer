@@ -20,8 +20,10 @@ def load_titanic_data() -> pd.DataFrame:
 
     # Check if the CSV file exists
     if not csv_path.is_file():
-        raise FileNotFoundError(f"The file {csv_path} does not exist.\
-        Please ensure the dataset is in the 'datasets' folder.")
+        raise FileNotFoundError(
+            f"The file {csv_path} does not exist.\
+        Please ensure the dataset is in the 'datasets' folder."
+        )
 
     # Load and return the CSV file as a DataFrame
     return pd.read_csv(csv_path)

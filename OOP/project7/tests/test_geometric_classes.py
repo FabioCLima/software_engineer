@@ -1,4 +1,3 @@
-
 # ! test_geometric_classes.py - Module
 from __future__ import annotations
 from src.geometric_classes import Point, Rectangle
@@ -6,7 +5,6 @@ from math import sqrt
 
 
 def test_point_class_instantiation():
-
     # Given: Two coordinates for the new point
     x1 = 3.0
     y1 = 4.0
@@ -21,7 +19,6 @@ def test_point_class_instantiation():
 
 
 def test_point_class_equality():
-
     # Given:
     x1 = 3.0
     y1 = 4.0
@@ -113,7 +110,7 @@ def test_distance_method():
     distance = p1.distance(p2)
 
     # Then: The result should match the expected value
-    expected_distance = sqrt((5-3)**2 + (6-4)**2)
+    expected_distance = sqrt((5 - 3) ** 2 + (6 - 4) ** 2)
     assert distance == expected_distance
 
     # 3. Test the distance when both points are the same

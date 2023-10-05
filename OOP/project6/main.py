@@ -2,7 +2,6 @@ from src.point_class import Point
 
 
 if __name__ == "__main__":
-
     x_input = input("Type the x coordinate, \n")
     y_input = input("Type the y coordinate, \n")
 

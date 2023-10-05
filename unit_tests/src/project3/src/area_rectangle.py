@@ -5,18 +5,21 @@ from typing import Callable
 from functools import wraps
 
 
-def validate_inputs(func: Callable[[float, float], float]) -> \
-                          Callable[[float, float], float]:
+def validate_inputs(
+    func: Callable[[float, float], float]
+) -> Callable[[float, float], float]:
     """
     Decorator to validate input for the area_rectangule function
     """
+
     @wraps(func)
     def wrapper(base, height):
         # Check if both inputs are of type int or float
-        if not isinstance(base, (int, float)) or not \
-               isinstance(height, (int, float)):
-            raise ValueError("Both base and height must be of type int or \
-                             float")
+        if not isinstance(base, (int, float)) or not isinstance(height, (int, float)):
+            raise ValueError(
+                "Both base and height must be of type int or \
+                             float"
+            )
 
         # Check if both inputs are non-negative
         if base < 0 or height < 0:

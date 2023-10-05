@@ -43,7 +43,7 @@ class Employee:
             name (str): The name of the employee.
             salary (float, optional): The annual salary of the employee.
             Defaults to 0.
-    """
+        """
         self.name = name
         if salary >= 0:
             self.salary = salary
@@ -59,7 +59,7 @@ class Employee:
 
         Args:
             new_name (str): The new name to set for the employee.
-    """
+        """
         self.name = new_name
 
     def set_salary(self, new_salary: float) -> None:
@@ -67,7 +67,7 @@ class Employee:
 
         Args:
             new_salary (float): The new annual salary for the employee.
-    """
+        """
         self.salary = new_salary
 
     # Add a give_raise() method with raise amount as a parameter
@@ -76,7 +76,7 @@ class Employee:
 
         Args:
             amount (float): The amount by which to increase the annual salary.
-    """
+        """
         self.salary += amount
 
     # Add monthly_salary method that returns 1/12th of salary attribute
@@ -85,15 +85,15 @@ class Employee:
 
         Returns:
             float: The monthly salary, which is 1/12th of the annual salary.
-    """
-        return (self.salary)/12
+        """
+        return (self.salary) / 12
 
 
 if __name__ == "__main__":
     emp = Employee("Anonymous", 11700)
 
     # Use set_name() on emp to set the name of emp to 'Fabio Lima'
-    emp.set_name('Fabio Lima')
+    emp.set_name("Fabio Lima")
 
     # Print the name of emp
     print(emp.name)

@@ -2,7 +2,6 @@ from src.area_rectangle import area_rectangule
 
 
 def test_area_rectangle_positive_values():
-
     # ! Given
     base: float = 2.0
     altura: float = 6.0

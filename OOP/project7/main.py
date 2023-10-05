@@ -5,12 +5,15 @@ from random import randint
 
 def main():
     # Creating a rectangle object using randint
-    rectangle = Rectangle(Point(randint(0, 9), randint(0, 9)),
-                          Point(randint(10, 19), randint(10, 19)))
+    rectangle = Rectangle(
+        Point(randint(0, 9), randint(0, 9)), Point(randint(10, 19), randint(10, 19))
+    )
 
-    print(f"Rectangle Coordinates: \n"
-          f"({rectangle.lowleft.x}, {rectangle.lowleft.y}), and \n"
-          f"({rectangle.upright.x}, {rectangle.upright.y})\n")
+    print(
+        f"Rectangle Coordinates: \n"
+        f"({rectangle.lowleft.x}, {rectangle.lowleft.y}), and \n"
+        f"({rectangle.upright.x}, {rectangle.upright.y})\n"
+    )
 
     try:
         x, y = map(float, input("Enter X and Y (X, Y): ").split())

@@ -10,6 +10,7 @@ class MyCounter:
     >>> mc.count
     5
     """
+
     def __init__(self, count: int = 0):
         self.count = count
 
@@ -31,10 +32,11 @@ class MyCounter:
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
 
-    mc = MyCounter()   # instanciando o objeto
-    print(mc.count)    # printando o valor do atributo do objeto
-    mc.set_count(5)    # setando o atributo count com o método count
-    mc.count += 1      # somando 1 ao atributo
-    print(mc.count)    # verificando novamente o valor do atributo
+    mc = MyCounter()  # instanciando o objeto
+    print(mc.count)  # printando o valor do atributo do objeto
+    mc.set_count(5)  # setando o atributo count com o método count
+    mc.count += 1  # somando 1 ao atributo
+    print(mc.count)  # verificando novamente o valor do atributo

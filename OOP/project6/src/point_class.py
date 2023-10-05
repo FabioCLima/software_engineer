@@ -44,10 +44,10 @@ class Point:
         Returns:
             float: The Euclidean distance from the origin.
         """
-        distance = sqrt((self.x)**2 + (self.y)**2)
+        distance = sqrt((self.x) ** 2 + (self.y) ** 2)
         return distance
 
-    def reflect(self, axis: str) -> 'Point':
+    def reflect(self, axis: str) -> "Point":
         """
         Reflects the point across the specified axis.
 
@@ -61,9 +61,9 @@ class Point:
             ValueError: If the provided axis is not 'x' or 'y'.
         """
         if axis == "x":
-            return Point(self.x, -1*self.y)
+            return Point(self.x, -1 * self.y)
         elif axis == "y":
-            return Point(-1*self.x, self.y)
+            return Point(-1 * self.x, self.y)
         else:
             raise ValueError("Invalid axis for reflection. Choose 'x' or 'y'.")
 

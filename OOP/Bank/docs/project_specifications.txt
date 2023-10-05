@@ -1,0 +1,30 @@
+Program that simulates running a bank.
+
+ps: Not ready for production, invalid user entries, or misuse --> ERROR
+
+Objective: Learn how the code interacts with the data associated with one or 
+more bank accounts.
+
+What operations a client would want to do with a bank account - methods,
+and what data would be needed to represent an account.
+
+Object-Oriented Analysis - Problem : Modeling a bank account and the interaction
+of a client.
+
+--> Actions/operations - functions or methods
+>>> Create (an account)
+>>> Deposit
+>>> Withdraw(saque/retirada)
+>>> Check balance
+
+--> Data/Attributes - data items - Nouns
+>>> client/customer name
+>>> Password
+>>> balance
+
+--> main code --> manages the bank Object
+Bank object that manages a dictionary of Account objects and calls methods
+of those objects.
+
+---> composition or object composition - logical structure in which one
+object manages one or more other objects

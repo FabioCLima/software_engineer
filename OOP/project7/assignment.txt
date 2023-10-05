@@ -3,10 +3,10 @@ The game is about users guessing points inside a rectangle.
 Rectangles have a coordinates for their lower-left and upper-right corners
 and points also have coordinates.
 
-The program displays a message to the user showing the coordinates of a rectangle. 
+The program displays a message to the user showing the coordinates of a rectangle.
 The user should enter the coordinates of a point.
 
-message -> string 
+message -> string
 coordinates -> float
 rectangle -> new class
 point -> new class
@@ -16,7 +16,7 @@ point -> new class
 
 **Overview**:
 The module consists of two main classes: `Point` and `Rectangle`. The `Point`
-class represents a point in a 2D space, while the `Rectangle` class 
+class represents a point in a 2D space, while the `Rectangle` class
 represents a rectangle defined by two points: the lower-left corner and the
 upper-right corner.
 
@@ -27,12 +27,12 @@ upper-right corner.
 - **Attributes**:
   - `x`: Represents the x-coordinate of the point.
   - `y`: Represents the y-coordinate of the point.
-  
+
 - **Methods**:
   1. `__init__`: This is the constructor method. When you create a new `Point`
     object, this method is automatically called. It initializes the `x` and `y`
     coordinates.
-     
+
      **Usage**:
      ```python
      p = Point(1, 2)
@@ -40,7 +40,7 @@ upper-right corner.
 
   2. `__str__`: This method returns a string representation of the object,
   making it easier to print and understand the object's state.
-     
+
      **Usage**:
      ```python
      print(p)  # Outputs: Point(1, 2)
@@ -51,7 +51,7 @@ upper-right corner.
 
   4. `falls_inside_rectangle`: This method checks if the current point is
   inside a given rectangle. It returns `True` if the point is inside and `False` otherwise.
-  
+
   5. `distance`: This method calculates the distance between the current
   point and another given point using the Pythagorean theorem.
 
@@ -66,7 +66,7 @@ upper-right corner.
 - **Methods**:
   1. `__init__`: This is the constructor method for the `Rectangle` class.
   It initializes the lower left and upper right corners using two `Point` objects.
-     
+
      **Usage**:
      ```python
      r = Rectangle(Point(0, 0), Point(2, 3))
@@ -74,7 +74,7 @@ upper-right corner.
 
   2. `__str__`: This method returns a string representation of the `Rectangle`
   object.
-  
+
   3. `area`: This method calculates the area of the rectangle using the
   formula: \(\text{width} \times \text{height}\).
 

@@ -1,7 +1,6 @@
 from src.area_rectangle import area_rectangule
 
 if __name__ == "__main__":
-
     base_input = input("Provide the base of the rectangle: \n")
     base: float = float(base_input)
     height_input = input("Inform the height of the rectangle: \n")

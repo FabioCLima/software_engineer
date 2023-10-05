@@ -28,8 +28,10 @@ if __name__ == "__main__":
 
     print()
     number_rows, number_columns = analyzer.size_data()
-    print((
-           f"The dimension of the inputed DataFrame:\n"
-           f"number of rows={number_rows}  and "
-           f"number of columns={number_columns} "
-    ))
+    print(
+        (
+            f"The dimension of the inputed DataFrame:\n"
+            f"number of rows={number_rows}  and "
+            f"number of columns={number_columns} "
+        )
+    )

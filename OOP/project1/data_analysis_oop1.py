@@ -23,8 +23,7 @@ class DataFrameAnalyzer:
 
 
 if __name__ == "__main__":
-    data = pd.DataFrame({"Name": ['Alice', 'Bob', 'Charlie'],
-                         "Age": [25, 30, 28]})
+    data = pd.DataFrame({"Name": ["Alice", "Bob", "Charlie"], "Age": [25, 30, 28]})
 
     analyzer = DataFrameAnalyzer(data)
 

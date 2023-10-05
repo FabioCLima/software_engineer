@@ -21,6 +21,7 @@ class DatasetLoader:
     load_data():
         Loads the dataset into a pandas DataFrame and returns it.
     """
+
     def __init__(self, dir_path: str, file_name: str) -> None:
         """
         Constructs all the necessary attributes for the DatasetLoader object.
@@ -56,8 +57,10 @@ class DatasetLoader:
         csv_path = self.dir_path / self.file_name
 
         if not csv_path.is_file():
-            raise FileNotFoundError(f"The file {csv_path} does not exist.\
-            Please ensure the dataset is in the correct folder.")
+            raise FileNotFoundError(
+                f"The file {csv_path} does not exist.\
+            Please ensure the dataset is in the correct folder."
+            )
 
         return pd.read_csv(csv_path)
 
