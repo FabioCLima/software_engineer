@@ -45,9 +45,9 @@ class Bank:
         returns its ID.
 
         Args:
-            client_name (str): The name of the client creating the account.
-            start_amount (int): The initial deposit amount for the new account.
-            password (str): The password for the new account.
+            client_name (str): Name of the client.
+            start_amount (int): Initial deposit amount.
+            password (str): Account password.
 
         Returns:
             int: The ID of the newly created account.
@@ -126,3 +126,70 @@ class Bank:
             print('Your account is now closed.')
         except ValueError:
             print("Please enter a valid account number.")
+
+    def balance(self) -> None:
+        """Get the balance of a user's account."""
+        print('*** Get Balance ***')
+        try:
+            user_account_number = int(input('Please enter your account number: '))
+            user_password = input('Please enter the password: ')
+
+            # Validate if account exists
+            if user_account_number not in self.accounts_dict:
+                print("Account number does not exist.")
+                return
+
+            account = self.accounts_dict[user_account_number]
+            # Validate password
+            if account._hash_password(user_password) != account._password:
+                print("Incorrect password.")
+                return
+
+            print('Your balance is:', account.balance)
+        except ValueError:
+            print("Please enter a valid account number.")
+
+    def deposit(self) -> None:
+        """Handle deposit action for a user's account."""
+        print('*** Deposit ***')
+        try:
+            account_num = int(input('Please enter the account number: '))
+            deposit_amount = int(input('Please enter amount to deposit: '))
+            user_password = input('Please enter the password: ')
+            account = self.accounts_dict[account_num]
+            account.deposit(deposit_amount, user_password)
+            print('Your new balance is:', account.balance)
+        except KeyError:
+            print("Account number does not exist.")
+        except ValueError as e:
+            print(f"Error: {e}")
+
+    def show(self) -> None:
+        """Display details for all the accounts."""
+        print('*** Show ***')
+        for account_num, account in self.accounts_dict.items():
+            print('   Account number:', account_num)
+            account.show()
+
+    def withdraw(self) -> None:
+        """Handle withdrawal action for a user's account."""
+        print('*** Withdraw ***')
+        try:
+            user_account_number = int(input('Please enter your account number: '))
+            user_amount = int(input('Please enter the amount to withdraw: '))
+            user_password = input('Please enter the password: ')
+            account = self.accounts_dict[user_account_number]
+            account.withdraw(user_amount, user_password)
+            print('Withdrew:', user_amount)
+            print('Your new balance is:', account.balance)
+        except KeyError:
+            print("Account number does not exist.")
+        except ValueError as e:
+            print(f"Error: {e}")
+
+    def bank_info(self) -> None:
+        """Display general bank information."""
+        print('Hours: 9 to 5')
+        print('Address: 123 Main Street, Anytown, USA')
+        print('Phone:  (650) 555-1212')
+        print('We currently have', len(self.accounts_dict), 'account(s) open.')
